@@ -17,13 +17,6 @@
 % OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 % THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %
-%% ATTRIBUTION
-%
-% In case of use, please include the following citation: 
-% "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman 
-% Operator Theory, Advances in Neural Information Processings Systems 33 
-% (NeurIPS 2020)". 
-%
 %-------------------------------------------------------------------------%
 function [ P ] = NodeKoopmanTraining( W, q, T, iFlag )
 %% Node Koopman Training
