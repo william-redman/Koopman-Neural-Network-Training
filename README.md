@@ -1,6 +1,6 @@
 # Koopman Neural Network Training
 
-This repository is the official implementation of "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman Operator Theory, *Advances in Neural Information Processings Systems* **33** (*NeurIPS* 2020)" (https://arxiv.org/pdf/2006.02361.pdf). In particular, it implements Koopman training based on Node Koopman operators, which was what was used to obtain the results presented in the paper. 
+Implementation of "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman Operator Theory, *Advances in Neural Information Processings Systems* **33** (*NeurIPS* 2020)". In particular, this code implements Koopman training based on Node Koopman operators, which was what was used to obtain the results presented in the paper. 
 
 ## Requirements
 
