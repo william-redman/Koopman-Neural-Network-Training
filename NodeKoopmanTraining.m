@@ -6,7 +6,7 @@
 % WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
 % LIMITED TO THE WARRANTIES OF TITLE OR MERCHANTABILITY, FITNESS FOR A PARTICULAR 
 % PURPOSE AND NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS,
-% ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT
+% ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT
 % DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED
 % WARRANTIES, SO THIS EXCLUSION MAY NOT APPLY TO YOU.
 %
@@ -20,22 +20,20 @@
 function [ P ] = NodeKoopmanTraining( W, q, T, iFlag )
 %% Node Koopman Training
 %-------------------------------------------------------------------------%
-%   This function performs node Koopman training on D, which can be
-%   composed of neural network weights and/or biases. This function was
-%   used in Dogra and Redman, Advances in Neural Information Processing 
-%   Systems 33 (NeurIPS 2020).
+%   This function performs Node Koopman training on W, which can be
+%   composed of neural network weights and/or biases. 
 %
-%   The assumptions here are that be that the input D is a tensor with the
+%   The assumptions here are that be that the input W is a tensor with the
 %   weights/biases stored in the first and second dimensions, and the time
 %   evolution stored in the third. Additionally, it assumes that the 
 %   dimension being "noded" over is the second one (as is convention). 
 %
 %   The input q determines whether the weights/biases going to each node
 %   should be further split up into finer chunks. Setting q = 1 sets them 
-%   all into their own chunks and setting q = size(D, 2) sets them all into 
+%   all into their own chunks and setting q = size(W, 2) sets them all into 
 %   a single chunk. 
 %
-%   Written by WTR 09/21/2020 // Last updated by WTR 09/21/2020
+%   Written by WTR 09/21/2020 // Last updated by WTR 10/20/2020
 %-------------------------------------------------------------------------%
 %% Globals 
 n1 = size(W, 1); 
