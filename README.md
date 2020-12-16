@@ -18,3 +18,7 @@ The input argument q determines whether the weights/biases going to each node sh
 a single chunk (and builds the standard Node Koopman operator).
 
 Finally, the input argument iFlag takes a 1 if the entire predicted trajectory is desired (i.e. all values from t_2 + 1 to t_2 + T). This can be helpful for seeing how Koopman training compares to standard training algorithms (as done in the paper). For time comparisions though, this should be turned off (iFlag = 0).  
+
+## Questions 
+
+For any questions feel free to email wredman@ucsb.edu. 
