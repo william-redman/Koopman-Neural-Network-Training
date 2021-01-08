@@ -1,6 +1,6 @@
 # Koopman Neural Network Training
 
-From "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman Operator Theory, *Advances in Neural Information Processings Systems* **33** (*NeurIPS* 2020)". In particular, this code implements Koopman training based on Node Koopman operators, which was what was used to obtain the results presented in the paper. 
+From "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman Operator Theory, *Advances in Neural Information Processings Systems* **33** (*NeurIPS* 2020)". This code implements Koopman training based on Node Koopman operators, which was what was used to obtain the results presented in the paper. 
 
 ## Requirements
 
@@ -12,7 +12,7 @@ As described in the paper, Koopman training requires weight/bias evolution from 
 
 ## Evaluation
 
-As described in the provdied function, weight/bias data for all the weights/biases in a layer is inputed as a tensor D. The assumptions is that the weights/biases are stored in the first and second dimensions, whereas the third dimension is time. Additionally, it assumes that the dimension being "noded" over is the second one (as is standard convention). 
+As described in the provdied function, weight/bias data for all the weights/biases in a layer is inputed as a tensor D. The assumptions is that the weights/biases are stored in the first and second dimensions, whereas the third dimension is time. Additionally, it assumes that the dimension being "noded" over is the second one (as is standard convention). The is means, for example, that D_{jit} describes the weight with which node i in Layer 1 is connected to node j in Layer 2 at time t. 
 
 The input argument q determines whether the weights/biases going to each node should be further split up into finer chunks (i.e. whether "Quasi-node" Koopman operators are to be constructed). Setting q = 1 sets them all into their own chunks (and builds Single Weight Koopman operators) and setting q = size(D, 2) sets them all into 
 a single chunk (and builds the standard Node Koopman operator).
@@ -21,4 +21,4 @@ Finally, the input argument iFlag takes a 1 if the entire predicted trajectory i
 
 ## Questions 
 
-For any questions feel free to email wredman@ucsb.edu. 
+For any questions, don't hesitate to email wredman@ucsb.edu. 
