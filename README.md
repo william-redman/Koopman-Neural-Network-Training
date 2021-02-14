@@ -6,19 +6,11 @@ From "A. S. Dogra and W. T. Redman, Optimizing Neural Networks via Koopman Opera
 
 The provided function makes use of only Matlab. 
 
-## Training
+## Example data
+An example data set of 25 NNs (~720 MB) trained using Ada delta (the data made to use Fig. 1) can be downloaded at https://drive.google.com/file/d/1ItkjQ--w42B4fCXPZtVKYv00G5aaWN9T/view?usp=sharing. 
 
-As described in the paper, Koopman training requires weight/bias evolution from training iteration t_1 to t_2. With that data, this function can be used to train the network T time steps ahead. T, t_1, and t_2 are all free parameters. 
-
-## Evaluation
-
-As described in the provdied function, weight/bias data for all the weights/biases in a layer is inputed as a tensor D. The assumptions is that the weights/biases are stored in the first and second dimensions, whereas the third dimension is time. Additionally, it assumes that the dimension being "noded" over is the second one (as is standard convention). The is means, for example, that D_{jit} describes the weight with which node i in Layer 1 is connected to node j in Layer 2 at time t. 
-
-The input argument q determines whether the weights/biases going to each node should be further split up into finer chunks (i.e. whether "Quasi-node" Koopman operators are to be constructed). Setting q = 1 sets them all into their own chunks (and builds Single Weight Koopman operators) and setting q = size(D, 2) sets them all into 
-a single chunk (and builds the standard Node Koopman operator).
-
-Finally, the input argument iFlag takes a 1 if the entire predicted trajectory is desired (i.e. all values from t_2 + 1 to t_2 + T). This can be helpful for seeing how Koopman training compares to standard training algorithms (as done in the paper). For time comparisions though, this should be turned off (iFlag = 0).  
+Having saved the example data to your computer, you can run HNN_mastere_example.m. This script calls the function NodeKoopmanTraining.m, which builds the Koopman operator and evolves the weights/biases forward. An error vs. weight/bias evolution plot (analogous to Fig. 1e) is produced. Various free parameters can be adjusted to get a feel for how Node Koopman training works. See the comments within the code and the paper for more details. 
 
 ## Questions 
 
-For any questions, don't hesitate to email wredman@ucsb.edu. 
+If you have any questions, don't hesitate to email wredman@ucsb.edu. 
