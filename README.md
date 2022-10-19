@@ -13,4 +13,4 @@ Having saved the example data to your computer, you can run HNN_mastere_example.
 
 ## Questions 
 
-If you have any questions, don't hesitate to email wredman@ucsb.edu. 
+If you have any questions regarding the codebase or the associated NeurIPS paper, don't hesitate to email wredman@ucsb.edu or adogra@nyu.edu
